@@ -67,25 +67,20 @@
             bindings = <&kp SINGLE_QUOTE>;
             key-positions = <18 19>;
         };
-
-        COMBO_SYSTEM_LAYER {
-            bindings = <&mo 3>;
-            key-positions = <39 40>;
-        };
     };
 
     macros {
         window_left: window_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&sk LC(GLOBE) &kp LEFT>;
+            bindings = <&sk LC(CAPSLOCK) &kp LEFT>;
             label = "WINDOW_LEFT";
         };
 
         window_right: window_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(GLOBE) &kp RIGHT>;
+            bindings = <&kp LC(CAPSLOCK) &kp RIGHT>;
             label = "WINDOW_RIGHT";
         };
     };
@@ -96,13 +91,13 @@
         DEFAULT_LAYER {
             display-name = "Default";
             bindings = <
-&kp Q              &kp W         &kp E         &kp R        &kp T                                            &kp Y         &kp U             &kp I             &kp O       &kp P
-&kp A              &kp S         &kp D         &kp F        &kp G                                            &kp H         &kp J             &kp K             &kp L       &kp SEMICOLON
-&mt2 LEFT_SHIFT Z  &kp X         &kp C         &kp V        &kp B                                            &kp N         &kp M             &kp COMMA         &kp PERIOD  &kp SLASH
-&kp LCTRL          &kp LEFT_ALT  &kp LEFT_GUI  &lt 6 LANG2  &mo 4      &mt LEFT_SHIFT BACKSPACE  &kp SPACE   &kp ENTER     &lt 5 LANGUAGE_1  &kp SINGLE_QUOTE  &kp EQUAL   &kp BACKSLASH
-                   &none         &kp RIGHT     &kp DOWN     &kp LEFT   &kp UP                    &kp LC(UP)  &kp LC(LEFT)  &kp LC(DOWN)      &kp LC(RIGHT)     &kp GLOBE
-&mkp LCLK          &mkp RCLK     &mkp MCLK                                                                                                   &mkp LCLK         &mkp RCLK   &mkp MCLK
-&mkp MB4           &mkp MB5      &kp LG(TAB)   &kp LG(D)    &kp LCTRL                                        &mkp MB4      &mkp MB5          &kp LG(TAB)       &kp LG(D)   &kp LCTRL
+&kp Q              &kp W         &kp E         &kp R        &kp T                                            &kp Y         &kp U             &kp I             &kp O        &kp P
+&kp A              &kp S         &kp D         &kp F        &kp G                                            &kp H         &kp J             &kp K             &kp L        &kp SEMICOLON
+&mt2 LEFT_SHIFT Z  &kp X         &kp C         &kp V        &kp B                                            &kp N         &kp M             &kp COMMA         &kp PERIOD   &kp SLASH
+&kp LCTRL          &kp LEFT_ALT  &kp LEFT_GUI  &lt 6 LANG2  &mo 4      &mt LEFT_SHIFT BACKSPACE  &kp SPACE   &kp ENTER     &lt 5 LANGUAGE_1  &kp SINGLE_QUOTE  &lt 3 EQUAL  &kp BACKSLASH
+                   &kp LG(C)     &kp RIGHT     &kp DOWN     &kp LEFT   &kp UP                    &kp LC(UP)  &kp LC(LEFT)  &kp LC(DOWN)      &kp LC(RIGHT)     &kp LG(P)
+&mkp LCLK          &mkp RCLK     &mkp MCLK                                                                                                   &mkp LCLK         &mkp RCLK    &mkp MCLK
+&mkp MB4           &mkp MB5      &kp LG(TAB)   &kp LG(D)    &kp LCTRL                                        &mkp MB4      &mkp MB5          &kp LG(TAB)       &kp LG(D)    &kp LCTRL
             >;
         };
 
