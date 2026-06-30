@@ -6,7 +6,7 @@ manifest:
       url-base: https://github.com/ShiniNet/
     - name: caksoylar
       url-base: https://github.com/caksoylar
-   - name: kot149
+    - name: kot149
       url-base: https://github.com/kot149
   projects:
     - name: zmk
