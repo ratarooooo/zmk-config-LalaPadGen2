@@ -63,7 +63,7 @@
         window_left: window_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(GLOBE) &kp LEFT>;
+            bindings = <&sk LC(GLOBE) &kp LEFT>;
             label = "WINDOW_LEFT";
         };
 
