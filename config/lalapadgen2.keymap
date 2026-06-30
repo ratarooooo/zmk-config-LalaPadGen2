@@ -57,6 +57,21 @@
             bindings = <&kp TAB>;
             key-positions = <10 11>;
         };
+
+        COMBO_EQUALS {
+            bindings = <&kp EQUAL>;
+            key-positions = <8 9>;
+        };
+
+        COMBO_QUOTE {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <18 19>;
+        };
+
+        COMBO_SYSTEM_LAYER {
+            bindings = <&mo 3>;
+            key-positions = <39 40>;
+        };
     };
 
     macros {
