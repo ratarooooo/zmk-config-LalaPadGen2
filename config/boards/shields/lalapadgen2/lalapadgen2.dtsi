@@ -5,6 +5,7 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
 #include "lalapadgen2-layouts.dtsi"
+#include <scroll-snap.dtsi>
 
 #define POS_TP_LCLK_L  52
 #define POS_TP_RCLK_L  53
@@ -162,14 +163,16 @@
                            <&zip_xy_scaler 1 5>,
                            <&zip_scroll_scaler 1 12>,
                            <&zip_dynamic_xy_scaler>,
-                           <&zip_dynamic_scroll_scaler>;
+                           <&zip_dynamic_scroll_scaler>,
+                           <&zip_scroll_snap>;
         lowspeedmode {
             layers = <1>,<2>;
             input-processors =  <&trackpad_key_behaviors_R>,
                                 <&zip_xy_scaler 1 15>,
                                 <&zip_scroll_scaler 1 40>,
                                 <&zip_dynamic_xy_scaler>,
-                                <&zip_dynamic_scroll_scaler>;
+                                <&zip_dynamic_scroll_scaler>,
+                                <&zip_scroll_snap>;
         };
     };
     trackpad_listener_L: trackpad_listener_L {
@@ -180,14 +183,16 @@
                            <&zip_xy_scaler 1 5>,
                            <&zip_scroll_scaler 1 12>,
                            <&zip_dynamic_xy_scaler>,
-                           <&zip_dynamic_scroll_scaler>;
+                           <&zip_dynamic_scroll_scaler>,
+                           <&zip_scroll_snap>;
         lowspeedmode {
             layers = <1>,<2>;
             input-processors =  <&trackpad_key_behaviors_L>,
                                 <&zip_xy_scaler 1 15>,
                                 <&zip_scroll_scaler 1 40>,
                                 <&zip_dynamic_xy_scaler>,
-                                <&zip_dynamic_scroll_scaler>;
+                                <&zip_dynamic_scroll_scaler>,
+                                <&zip_scroll_snap>;
         };
     };
 
@@ -217,6 +222,18 @@
         charge-gpios = <&gpio0 17 GPIO_ACTIVE_LOW>;
         led-gpios = <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>;
    };
+};
+
+&zip_scroll_snap {
+    x-threshold = <5 8>;
+    y-threshold = <8 5>;
+    xy-threshold = <5 8>;
+
+    require-n-samples = <10>;
+    immediate-snap-threshold = <1500>;
+    lock-duration-ms = <200>;
+    lock-for-next-n-events = <10>;
+    idle-reset-timeout-ms = <200>;
 };
 
 // TrackPad on I2C
