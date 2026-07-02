@@ -1,0 +1,7 @@
+services:
+  builder:
+    build: .
+    platform: linux/amd64
+    volumes:
+      - ./config:/workspace/config:ro
+      - ${ZMK_BUILDER_OUTPUT:-./output}:/workspace/output
